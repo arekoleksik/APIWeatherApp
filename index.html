@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Aktualna pogoda w Szczecinie: <span id="temp">Brak danych</span></h2>
+
+
+
+
+<script>
+    fetch ('http://api.openweathermap.org/data/2.5/weather?id=3083829&appid=0b3d75e5a49f2a267f054a0a60bed6f3&units=metric')
+        .then(function (res) {
+            return res.json()
+        })
+        .then(function (json) {
+            console.log(json);
+            let temp=document.getElementById('temp');
+            temp.innerText=json.main.temp
+        })
+</script>
+
+<script
+        src="http://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+
+</script>
+</body>
+</html>
